@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import OtherLogin from "../../../Shared/OtherLogin/OtherLogin";
@@ -9,6 +9,9 @@ const Login = () => {
   // signIn firebase hooks state:
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
+      auth
+    );
   // email, password state:
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -74,6 +77,7 @@ const Login = () => {
         <p>
           Already have an account? <Link to="/signup">Sign up</Link>{" "}
         </p>
+         <button className="btn btn-link" onClick={() => {sendPasswordResetEmail(email)}}>Reset password</button>
       </div>
         {errMsg}
         <OtherLogin/>
