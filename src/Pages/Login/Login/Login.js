@@ -44,10 +44,9 @@ const Login = () => {
   };
 
   return (
-    <>
     <div>
       <h1 className="text-center mt-3">Login</h1>
-      <div className="w-50 p-3 rounded mx-auto my-5">
+      <div className="w-50 mx-auto mt-3 mb-5">
         <Form onSubmit={handleLogin}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
@@ -68,9 +67,6 @@ const Login = () => {
               placeholder="Password"
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group>
           <Button variant="primary" type="submit">
             Submit
           </Button>
@@ -79,10 +75,10 @@ const Login = () => {
           Already have an account? <Link to="/signup">Sign up</Link>{" "}
         </p>
       </div>
-      {errMsg}
+        {errMsg}
+        <OtherLogin/>
     </div>
-    <OtherLogin/>
-    </>
+    
   );
 };
 
