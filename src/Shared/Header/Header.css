@@ -1,6 +1,9 @@
 #basic-navbar-nav a{
   text-decoration: none;
   color: #000;
-  margin-left: 20px;
+  margin-left: 15px;
 
+}
+a{
+  text-decoration: none;
 }

@@ -5,12 +5,12 @@
 
 .hero-btn{
     border: 0;
-    background-color: cadetblue;
+    background-color: #4D4C7D;
     padding: 10px 24px;
     border-radius: 5px;
     font-size: 17px;
     color: #fff;
 }
 .hero-btn:hover{
-  background-color: #467d7f;
+  background-color: #454474;
 }
