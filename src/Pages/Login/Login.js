@@ -1,24 +1,23 @@
 import React from "react";
-import { Form, Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const Signup = () => {
+const Login = () => {
   return (
     <div>
-      <h1 className="text-center mt-3">Sign Up</h1>
+      <h1 className="text-center mt-3">Login</h1>
       <div className="w-50 p-3 rounded mx-auto my-5">
         <Form>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Control type="text" placeholder="user name" />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Control type="email" placeholder="enter email" />
+            <Form.Label>Email address</Form.Label>
+            <Form.Control type="email" placeholder="Enter email" />
             <Form.Text className="text-muted">
               We'll never share your email with anyone else.
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Control type="password" placeholder="password" />
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="password" placeholder="Password" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Check type="checkbox" label="Check me out" />
@@ -26,11 +25,13 @@ const Signup = () => {
           <Button variant="primary" type="submit">
             Submit
           </Button>
-              </Form>
-            <p>Already have an account? <Link to="/login">Login</Link> </p>
+        </Form>
+        <p>
+          Already have an account? <Link to="/signup">Sign up</Link>{" "}
+        </p>
       </div>
     </div>
   );
 };
 
-export default Signup;
+export default Login;
