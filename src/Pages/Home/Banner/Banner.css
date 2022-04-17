@@ -1,8 +1,8 @@
-#banner{
-    background-image: url("../../../images//banner.jpg");
-    background-position: left;
-    height: 500px;
+
+.banner-left {
+  width: 100%;
 }
+
 .hero-btn{
     border: 0;
     background-color: cadetblue;
