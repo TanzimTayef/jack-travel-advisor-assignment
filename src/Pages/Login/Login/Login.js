@@ -3,6 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import OtherLogin from "../../../Shared/OtherLogin/OtherLogin";
 
 const Login = () => {
   // signIn firebase hooks state:
@@ -43,6 +44,7 @@ const Login = () => {
   };
 
   return (
+    <>
     <div>
       <h1 className="text-center mt-3">Login</h1>
       <div className="w-50 p-3 rounded mx-auto my-5">
@@ -79,6 +81,8 @@ const Login = () => {
       </div>
       {errMsg}
     </div>
+    <OtherLogin/>
+    </>
   );
 };
 
