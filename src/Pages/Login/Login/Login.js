@@ -24,6 +24,7 @@ const Login = () => {
   // replace to user current location:
   if (user) {
     navigate(from, { replace: true });
+
   }
 
   // error
