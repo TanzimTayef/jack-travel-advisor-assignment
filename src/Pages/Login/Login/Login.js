@@ -11,7 +11,6 @@ const Login = () => {
   // email, password state:
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [customError, setCustomError] = useState("");
 
   // navigation state:
   const navigate = useNavigate();
@@ -19,11 +18,19 @@ const Login = () => {
   const location = useLocation();
   // user current location path:
   let from = location.state?.from?.pathname || "/";
+  let errMsg;
 
 
   // replace to user current location:
   if (user) {
     navigate(from, { replace: true });
+  }
+
+  // error
+  if (error) {
+    errMsg = (
+      <p className="text-danger text-center mt-2">Error: {error?.message}</p>
+    )
   }
 
   // handle login form:
@@ -69,6 +76,7 @@ const Login = () => {
           Already have an account? <Link to="/signup">Sign up</Link>{" "}
         </p>
       </div>
+      {errMsg}
     </div>
   );
 };
