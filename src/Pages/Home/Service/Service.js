@@ -1,5 +1,6 @@
 import React from "react";
-import { Card, Col } from "react-bootstrap";
+import {Card, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Service = () => {
   return (
@@ -14,6 +15,7 @@ const Service = () => {
               lead-in to additional content. This content is a little bit
               longer.
             </Card.Text>
+            <Link  to="/checkout">Check Out</Link>
           </Card.Body>
         </Card>
       </Col>

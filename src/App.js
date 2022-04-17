@@ -6,7 +6,7 @@ import Blogs from "./Pages/Blogs/Blogs"
 import AboutMe from "./Pages/AboutMe/AboutMe";
 import Signup from "./Pages/Signup/Signup";
 import Footer from "./Shared/Footer/Footer";
-import Login from "./Pages/Login/Login";
+import Login from "./Pages/Login/Login/Login";
 
 function App() {
   return (
