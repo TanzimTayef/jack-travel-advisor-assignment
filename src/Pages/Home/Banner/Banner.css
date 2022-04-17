@@ -1,0 +1,16 @@
+#banner{
+    background-image: url("../../../images//banner.jpg");
+    background-position: left;
+    height: 500px;
+}
+.hero-btn{
+    border: 0;
+    background-color: cadetblue;
+    padding: 10px 24px;
+    border-radius: 5px;
+    font-size: 17px;
+    color: #fff;
+}
+.hero-btn:hover{
+  background-color: #467d7f;
+}
