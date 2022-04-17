@@ -2,26 +2,36 @@ import "./App.css";
 import Header from "./Shared/Header/Header";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home/Home/Home";
-import Blogs from "./Pages/Blogs/Blogs"
+import Blogs from "./Pages/Blogs/Blogs";
 import AboutMe from "./Pages/AboutMe/AboutMe";
 import Signup from "./Pages/Signup/Signup";
 import Footer from "./Shared/Footer/Footer";
 import Login from "./Pages/Login/Login/Login";
 import NotFound from "./Shared/NotFound/NotFound";
+import Checkout from "./Pages/Checkout/Checkout";
+import RequireAuth from "./Pages/Login/RequireAuth/RequirAuth";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/blogs" element={<Blogs/>} />
-        <Route path="/about-me" element={<AboutMe/>} />
-        <Route path="/signup" element={<Signup/>} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="*" element={<NotFound/>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/about-me" element={<AboutMe />} />
+        <Route
+          path="/checkout"
+          element={
+            <RequireAuth>
+              <Checkout />
+            </RequireAuth>
+          }
+        />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
