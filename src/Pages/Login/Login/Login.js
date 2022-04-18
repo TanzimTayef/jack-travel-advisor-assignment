@@ -6,6 +6,7 @@ import {
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import Loading from "../../../Shared/Loading/Loading";
 import OtherLogin from "../../../Shared/OtherLogin/OtherLogin";
 
 const Login = () => {
@@ -28,6 +29,10 @@ const Login = () => {
   // replace to user current location:
   if (user) {
     navigate(from, { replace: true });
+  }
+  // loading
+  if (loading) {
+    return <Loading/>
   }
 
   // error

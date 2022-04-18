@@ -8,6 +8,7 @@ import {
 import auth from "../../firebase.init";
 import OtherLogin from "../../Shared/OtherLogin/OtherLogin";
 import "./Signup.css";
+import Loading from "../../Shared/Loading/Loading";
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -20,10 +21,15 @@ const Signup = () => {
   let navigate = useNavigate();
   let errMsg;
 
-
+// user navigate
   if (user) {
     navigate("/");
   }
+// loading
+  if (loading) {
+    return <Loading/>
+  }
+
   // error
   if (error) {
     errMsg = (

@@ -18,13 +18,13 @@ const Service = ({ service }) => {
             <img src={images} className="img-fluid" alt="" />
             <p className="serv-price">
               <div className="d-block text-center">
-                <p className="fs-5">From</p>
-                <p className="fs-3">{price}</p>
+                <p className="fs-6">From</p>
+                <p className="fs-5">{price}</p>
               </div>
             </p>
-            <div className="service-text">
-              <h3>{name}</h3>
-              <p>{desc.slice(0, 80)}...</p>
+            <div className="service-text text-start">
+              <h4 className="mb-3">{name}</h4>
+              <p className="pb-2 m-0">{desc.slice(0, 80)}...</p>
             </div>
           </div>
         </div>
