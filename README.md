@@ -1,9 +1,8 @@
 # Jack Travel Advisor
 
 
-## JTA Live web site link:
 
-This project was: [## jack travel advisor](https://jack-travel-advisor.web.app/).
+## [jack travel advisor](https://jack-travel-advisor.web.app/).
 
  [https://jack-travel-advisor.web.app/](https://jack-travel-advisor.web.app/)
 
