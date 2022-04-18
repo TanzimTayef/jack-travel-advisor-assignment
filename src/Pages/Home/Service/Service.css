@@ -1,45 +1,48 @@
-.service{
-margin: 30px 0;
+.service {
+  margin: 30px 0;
+}
+.service a {
+  text-decoration: none;
+}
+.service a:hover {
+  color: #fff;
+}
+.service-img {
+  position: relative;
+  
+}
+.service-img img {
+  border-radius: top 5px;
 
 }
-.service a{
-    text-decoration: none;
+.service-text {
+  position: absolute;
+  bottom: 30px;
+  text-align: center;
+  color: #fff;
 }
-.service a:hover{
-    color: #fff;
+.serv-price {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  color: #fff;
+  font-size: 24px;
+  background-color: #fe6f6f;
+  padding: 12px 22px;
+  border-radius: 5px;
 }
-.service-img{
-    position: relative;
-
+.serv-price p {
+  margin: 0;
+  padding: 0;
 }
-.service-text{
-    position: absolute;
-    bottom: 30px;
-   text-align: center;
-   color: #fff;
+.checkout-btn {
+  border: 0;
+  padding: 10px 0;
+  font-size: 17px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.4s;
 }
-.serv-price{
-    position: absolute;
-    top: 0;
-    left: 0px;
-    color: #fff;
-    font-size: 24px;
-    background-color: #FE6F6F;
-    padding: 12px 22px;
-    border-radius: 5px;
-}
-.serv-price p{
-    margin: 0;
-    padding: 0;
-}
-.checkout-btn{
-    border: 0;
-    padding: 10px 0;
-    font-size: 17px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: .4s;
-}
-.checkout-btn:hover{
-    background-color: #f5f5f5;
+.checkout-btn:hover {
+  background-color: #f5f5f5;
 }

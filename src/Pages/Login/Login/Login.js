@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import OtherLogin from "../../../Shared/OtherLogin/OtherLogin";
@@ -9,9 +12,7 @@ const Login = () => {
   // signIn firebase hooks state:
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
-      auth
-    );
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
   // email, password state:
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,18 +25,16 @@ const Login = () => {
   let from = location.state?.from?.pathname || "/";
   let errMsg;
 
-
   // replace to user current location:
   if (user) {
     navigate(from, { replace: true });
-
   }
 
   // error
   if (error) {
     errMsg = (
       <p className="text-danger text-center mt-2">Error: {error?.message}</p>
-    )
+    );
   }
 
   // handle login form:
@@ -47,40 +46,49 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h1 className="text-center mt-3">Login</h1>
-      <div className="w-50 mx-auto mt-3 mb-5">
-        <Form onSubmit={handleLogin}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              onBlur={(e) => setEmail(e.target.value)}
-              type="email"
-              placeholder="Enter email"
-            />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              onBlur={(e) => setPassword(e.target.value)}
-              type="password"
-              placeholder="Password"
-            />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </Form>
-        <p>
-          Already have an account? <Link to="/signup">Sign up</Link>{" "}
-        </p>
-         <button className="btn btn-link" onClick={() => {sendPasswordResetEmail(email)}}>Reset password</button>
+    <div className="py-5">
+      <h3 className="form-title">Log In with jack</h3>
+      <div className="form-container">
+        <form onSubmit={handleLogin}>
+          <input
+            type="email"
+            onBlur={(e) => setEmail(e.target.value)}
+            name="email"
+            placeholder="Enter your email address"
+            id=""
+          />
+          <input
+            type="password"
+            onBlur={(e) => setPassword(e.target.value)}
+            name="password"
+            placeholder="Password"
+            id=""
+          />
+          <div className="reset-pass">
+            <Link
+              to=""
+              onClick={() => {
+                sendPasswordResetEmail(email);
+              }}
+            >
+              Reset password
+            </Link>
+          </div>
+          <div>
+            {errMsg}
+            <button className="sing-btn" type="submit">
+              Log In
+            </button>
+          </div>
+        </form>
       </div>
-        {errMsg}
-        <OtherLogin/>
+      <p className="my-3 text-center">
+        Create an account!!{" "}
+        <Link className="fs-6" to="/signup">
+          Sign Up
+        </Link>
+      </p>
+      <OtherLogin />
     </div>
     
   );
