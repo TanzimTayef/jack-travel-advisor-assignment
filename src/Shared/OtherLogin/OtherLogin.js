@@ -33,9 +33,9 @@ const OtherLogin = () => {
   return (
     <>
       <div className="d-flex align-items-center w-25 mx-auto">
-        <div style={{ height: "2px" }} className="w-50 bg-info"></div>
+        <div style={{ height: "2px", background: '#454474' }} className="w-50"></div>
         <div className="mx-3">or</div>
-        <div style={{ height: "2px" }} className="w-50 bg-info"></div>
+        <div style={{ height: "2px", background: '#454474' }} className="w-50"></div>
       </div>
       {errElement}
       <div className="w-50 mx-auto text-center mt-4">

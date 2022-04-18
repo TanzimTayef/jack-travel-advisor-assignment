@@ -33,7 +33,7 @@ const Login = () => {
   // error
   if (error) {
     errMsg = (
-      <p className="text-danger text-center mt-2">Error: {error?.message}</p>
+      <span className="text-danger text-center">Error: {error?.message}</span>
     );
   }
 
@@ -56,6 +56,7 @@ const Login = () => {
             name="email"
             placeholder="Enter your email address"
             id=""
+            required
           />
           <input
             type="password"
@@ -63,19 +64,23 @@ const Login = () => {
             name="password"
             placeholder="Password"
             id=""
+            required
           />
-          <div className="reset-pass">
-            <Link
-              to=""
-              onClick={() => {
-                sendPasswordResetEmail(email);
-              }}
-            >
-              Reset password
-            </Link>
+          <div className="d-flex justify-content-between">
+            <div>{errMsg ? errMsg : ""}</div>
+            <div>
+              <Link
+                to=""
+                onClick={() => {
+                  sendPasswordResetEmail(email);
+                }}
+              >
+                Reset password
+              </Link>
+            </div>
           </div>
+
           <div>
-            {errMsg}
             <button className="sing-btn" type="submit">
               Log In
             </button>
@@ -90,7 +95,6 @@ const Login = () => {
       </p>
       <OtherLogin />
     </div>
-    
   );
 };
 

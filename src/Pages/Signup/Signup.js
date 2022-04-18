@@ -14,25 +14,33 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmpassword] = useState("");
-  const [error, setError] = useState("");
-  const [createUserWithEmailAndPassword, user, loading] =
+  const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
-  const navigate = useNavigate();
+  let navigate = useNavigate();
+  let errMsg;
+
+
+  if (user) {
+    navigate("/");
+  }
+  // error
+  if (error) {
+    errMsg = (
+      <span className="text-danger text-center">Error: {error?.message}</span>
+    );
+  }
 
   const handleSignupForm = (e) => {
     e.preventDefault();
+
     if (password.length < 6) {
-      setError("Your password must need to 6 chracter");
+      console.log("Your password must need to 6 chracter");
     }
     if (password !== confirmpassword) {
-      setError("Your email don't match");
+      console.log("Your email don't match");
       return;
     }
-    if (user) {
-      navigate("/");
-    }
-
     // creating user by firebase hooks
     createUserWithEmailAndPassword(email, password);
     setName("")
@@ -53,9 +61,11 @@ const Signup = () => {
             name="email"
             placeholder="Enter your email address"
             id=""
+            required
           />
-          <input type="password"  onBlur={(e) => setPassword(e.target.value)}  name="password" placeholder="Password" id="" />
-          <input type="password"  onBlur={(e) => setConfirmpassword(e.target.value)}  name="password" placeholder="Confirm Password" id="" />
+          <input type="password" required  onBlur={(e) => setPassword(e.target.value)}  name="password" placeholder="Password" id="" />
+          <input type="password" required onBlur={(e) => setConfirmpassword(e.target.value)} name="password" placeholder="Confirm Password" id="" />
+          {errMsg}
           <div>
             <button className="sing-btn" type="submit">
               Sign In

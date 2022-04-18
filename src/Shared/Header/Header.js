@@ -14,7 +14,11 @@ const Header = () => {
   };
 
   return (
-    <Navbar bg="white" expand="lg" style={{ height: "80px", position: "sticky" }}>
+    <Navbar
+      bg="white"
+      expand="lg"
+      style={{ height: "80px", position: "sticky" }}
+    >
       <Container>
         <Navbar.Brand to="/home" className="fw-bold">
           Jack Travel Advisor
@@ -24,10 +28,15 @@ const Header = () => {
           <Nav className="ms-auto fw-bold">
             <Link to="/">Home</Link>
             <Link to="/blogs">Blogs</Link>
-            <Link to="/about-me">About Me</Link>
-            <Link to="/signup">Signup</Link>
+            <Link to="/about-me">About</Link>
+
             {user ? (
-              <button className="bg-transparent border-0 fw-bold ms-2" onClick={handleSignOut}>Log Out</button>
+              <button
+                className="bg-transparent border-0 fw-bold ms-2"
+                onClick={handleSignOut}
+              >
+                Log Out
+              </button>
             ) : (
               <Link to="/login">Log In</Link>
             )}
