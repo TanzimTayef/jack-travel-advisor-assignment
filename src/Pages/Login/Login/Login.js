@@ -8,6 +8,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Loading from "../../../Shared/Loading/Loading";
 import OtherLogin from "../../../Shared/OtherLogin/OtherLogin";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   // signIn firebase hooks state:
@@ -32,7 +34,7 @@ const Login = () => {
   }
   // loading
   if (loading) {
-    return <Loading/>
+    return <Loading />;
   }
 
   // error
@@ -41,6 +43,11 @@ const Login = () => {
       <span className="text-danger text-center">Error: {error?.message}</span>
     );
   }
+
+  const resetPassowrd = () => {
+    sendPasswordResetEmail(email);
+    toast("send email");
+  };
 
   // handle login form:
   const handleLogin = (e) => {
@@ -71,19 +78,8 @@ const Login = () => {
             id=""
             required
           />
-          <div className="d-flex justify-content-between">
-            <div>{errMsg ? errMsg : ""}</div>
-            <div>
-              <Link
-                to=""
-                onClick={() => {
-                  sendPasswordResetEmail(email);
-                }}
-              >
-                Reset password
-              </Link>
-            </div>
-          </div>
+
+          <div>{errMsg ? errMsg : ""}</div>
 
           <div>
             <button className="sing-btn" type="submit">
@@ -92,13 +88,19 @@ const Login = () => {
           </div>
         </form>
       </div>
-      <p className="my-3 text-center">
+      <p className="mt-3 text-center">
         Create an account!!{" "}
         <Link className="fs-6" to="/signup">
           Sign Up
         </Link>
       </p>
+      <div className="text-center m-0 p-0 ">
+        <Link to="" onClick={resetPassowrd}>
+          Reset password
+        </Link>
+      </div>
       <OtherLogin />
+      <ToastContainer />
     </div>
   );
 };
