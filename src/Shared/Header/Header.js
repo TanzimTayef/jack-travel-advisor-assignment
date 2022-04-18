@@ -14,7 +14,7 @@ const Header = () => {
   };
 
   return (
-    <Navbar bg="white" expand="lg" style={{ height: "80px" }}>
+    <Navbar bg="white" expand="lg" style={{ height: "80px", position: "sticky" }}>
       <Container>
         <Navbar.Brand to="/home" className="fw-bold">
           Jack Travel Advisor

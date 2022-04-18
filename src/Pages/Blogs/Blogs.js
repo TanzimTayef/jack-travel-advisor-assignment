@@ -1,13 +1,16 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import "./Blogs.css"
+
 
 const Blogs = () => {
   return (
-    <Container>
-      <div>
-        <div>
-          <h4>
-            What is the difference between authorization and authentication?
+   
+      <Container>
+      <div className="w-75 py-5">
+        <div className="qus">
+          <h4> 
+           1. What is the difference between authorization and authentication?
           </h4>
           <p>
             Authentication is a process to identify someone. And who can access
@@ -20,11 +23,11 @@ const Blogs = () => {
             authorization works by setting and it is maintained by organisation
           </p>
         </div>
-        <div>
-          <h3>
-            Why are you using firebase? And what other option to implement
+        <div className="qus">
+          <h4>
+           2. Why are you using firebase? And what other option to implement
             authentication?
-          </h3>
+          </h4>
           <p>
             Firebase manages all data real-time in the database. Firebase is
             very fast and it can manage user data perfectly. Firebase is very
@@ -34,10 +37,10 @@ const Blogs = () => {
             google, github, facebook, twitter.
           </p>
         </div>
-        <div>
-          <h3>
-            What other service does firebase provide other than authentication?
-          </h3>
+        <div className="qus">
+          <h4>
+           3. What other service does firebase provide other than authentication?
+          </h4>
           <p>
             Without firebase there have more companies they provide the
             authentication service Parse Open Source Backend Platform, Kuzzle
@@ -54,6 +57,7 @@ const Blogs = () => {
         </div>
       </div>
     </Container>
+  
   );
 };
 
