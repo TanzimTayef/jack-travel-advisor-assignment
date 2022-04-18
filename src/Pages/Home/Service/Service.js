@@ -1,6 +1,5 @@
 import React from "react";
-import { Card, Col } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Service.css";
 
 const Service = ({ service }) => {
@@ -12,8 +11,8 @@ const Service = ({ service }) => {
   };
 
   return (
-    <div className="service">
-      <div>
+ 
+      <div className="service">
         <div>
           <div className="service-img">
             <img src={images} className="img-fluid" alt="" />
@@ -25,7 +24,7 @@ const Service = ({ service }) => {
             </p>
             <div className="service-text">
               <h3>{name}</h3>
-              <p>{desc}</p>
+              <p>{desc.slice(0, 80)}...</p>
             </div>
           </div>
         </div>
@@ -36,24 +35,6 @@ const Service = ({ service }) => {
           </button>
         </div>
       </div>
-
-      {/* <Col >
-        <Card className="border-0">
-          <Card.Img variant="top" src={images} />
-          <Card.Body>
-            <Card.Title>{ name}</Card.Title>
-            <Card.Text>
-             {desc}
-            </Card.Text>
-            <Card.Text>
-               price: {price}
-            </Card.Text>
-           
-            <Link className="hero-btn text-decoration-none"  to="/checkout">Check Out</Link>
-          </Card.Body>
-        </Card>
-      </Col> */}
-    </div>
   );
 };
 
