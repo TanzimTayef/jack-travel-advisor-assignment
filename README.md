@@ -6,10 +6,32 @@
 
  [https://jack-travel-advisor.web.app/](https://jack-travel-advisor.web.app/)
 
+## About This Project:
+
+* I am using this website's full authentication system by firebase.
+* In this project have email and password and google vase authentication.
+* I am using to mage authentication easily react firebase hook. 
+* I am using routing to navigate the page.
+* There are five pages. Home blogs , about me, login and signup.
+* I am putting my service in the home by services section.
+* I am using the image imgbb site.
+
+
+## what i am using react hook
+* i am using useState for manage state.
+* i am using useEffect for fetch data.
+* i am using a custom hooks useService.
+### hooks using for manage authentication 
+* for create user  createUserWithEmailAndPassword with verify email.
+* for login signInWithEmailAndPassword.
+* for reset password useSendPasswordResetEmail.
+* for sing out SingOut.
 
 
 
 
+
+<!-------------- -->
 ## Available Scripts
 
 In the project directory, you can run:
